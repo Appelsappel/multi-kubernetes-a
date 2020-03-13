@@ -12,7 +12,7 @@ spec:
     - hosts:
         - opgebokt.nl # zie host: opgebokt.nl below
         - www.opgebokt.nl
-        secretName: opgebokt-nl
+      secretName: opgebokt-nl
   rules:
     - host: opgebokt.nl
       http:
