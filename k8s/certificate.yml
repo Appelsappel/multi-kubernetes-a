@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha2
+kind: Certificate
+metadata:
+  name: opgebokt-nl-tls
+spec:
+  secretName: opgebokt-nl
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: opgebokt.nl
+  dnsNames:
+    - opgebokt.nl
+    - www.opgebokt.nl
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - opgebokt.nl
+          - www.opgebokt.nl
